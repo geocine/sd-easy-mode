@@ -1,7 +1,7 @@
 [
     {
         "instance_prompt": "photo of {SDD_TOKEN} {SDD_CLASS}",
-        "class_prompt": "photo of a {SDD_CLASS}",
+        "class_prompt": "photo of {SDD_CLASS}",
         "instance_data_dir": "/content/data/{SDD_TOKEN}",
         "class_data_dir": "/content/data/{SDD_CLASS}"
     }
