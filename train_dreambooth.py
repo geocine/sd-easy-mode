@@ -461,7 +461,7 @@ def main(args):
                     pipeline.to(accelerator.device)
 
                 num_new_images = args.num_class_images - cur_class_images
-                logger.info(f"Number of class images to sample: {num_new_images}.")
+                print(f"Number of class images to sample: {num_new_images}.")
 
                 sample_dataset = PromptDataset(concept["class_prompt"], num_new_images)
                 sample_dataloader = torch.utils.data.DataLoader(sample_dataset, batch_size=args.sample_batch_size)
@@ -666,14 +666,14 @@ def main(args):
     # Train!
     total_batch_size = args.train_batch_size * accelerator.num_processes * args.gradient_accumulation_steps
 
-    logger.info("***** Running training *****")
-    logger.info(f"  Num examples = {len(train_dataset)}")
-    logger.info(f"  Num batches each epoch = {len(train_dataloader)}")
-    logger.info(f"  Num Epochs = {args.num_train_epochs}")
-    logger.info(f"  Instantaneous batch size per device = {args.train_batch_size}")
-    logger.info(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
-    logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
-    logger.info(f"  Total optimization steps = {args.max_train_steps}")
+    print("***** Running training *****")
+    print(f"  Num examples = {len(train_dataset)}")
+    print(f"  Num batches each epoch = {len(train_dataloader)}")
+    print(f"  Num Epochs = {args.num_train_epochs}")
+    print(f"  Instantaneous batch size per device = {args.train_batch_size}")
+    print(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
+    print(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
+    print(f"  Total optimization steps = {args.max_train_steps}")
 
     def save_weights(step):
         # Create the pipeline using using the trained modules and save it.
