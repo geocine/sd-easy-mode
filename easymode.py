@@ -2,7 +2,7 @@ import json
 import os
 import subprocess
 import time
-from ipywidgets import IntProgress, HTML, HBox, display
+from ipywidgets import IntProgress, HTML, HBox
 import numpy as np
 
 class ProgressBar:
@@ -60,7 +60,7 @@ def install_package(package, diffusers_url, xformers_url, branch="main", force_r
     # print(result.stdout)
     return f'{package} is installed'
 
-def download_regularization(sdd_class):
+def download_regularization(sdd_class, rev="main"):
     unzip_directory = f"/content/data/{sdd_class}"
 
     # Check if the unzip directory exists
@@ -77,7 +77,7 @@ def download_regularization(sdd_class):
     zip_file = f"{sdd_class}.zip"
     if not os.path.exists(zip_file):
         try:
-            reg_url = f"https://huggingface.co/datasets/geocine/sd-v1-5-regularization-images/resolve/{branch}/{zip_file}"
+            reg_url = f"https://huggingface.co/datasets/geocine/sd-v1-5-regularization-images/resolve/{rev}/{zip_file}"
             subprocess.run(["wget", "-q", reg_url], check=True)
         except Exception as e:
             # Print an error message and set the zip_file variable to None if the download fails or the user doesn't have access
