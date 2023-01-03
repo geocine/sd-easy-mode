@@ -81,7 +81,7 @@ def download_regularization(sdd_class, rev="main"):
             subprocess.run(["wget", "-q", reg_url], check=True)
         except Exception as e:
             # Print an error message and set the zip_file variable to None if the download fails or the user doesn't have access
-            print(f"An error occurred while downloading the dataset: {e}")
+            print(f"Pregenerated regularization images not available, skipping download")
             zip_file = None
 
     # Check if the unzip directory has files
