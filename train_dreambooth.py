@@ -17,7 +17,7 @@ from torch.utils.data import Dataset
 from accelerate import Accelerator
 from accelerate.logging import get_logger
 from accelerate.utils import set_seed
-from diffusers import AutoencoderKL, DDIMScheduler, EulerAncestralDiscreteScheduler, DDPMScheduler, StableDiffusionPipeline, UNet2DConditionModel
+from diffusers import AutoencoderKL, PNDMScheduler, DDPMScheduler, StableDiffusionPipeline, UNet2DConditionModel
 from diffusers.optimization import get_scheduler
 from huggingface_hub import HfFolder, Repository, whoami
 from PIL import Image
@@ -682,7 +682,7 @@ def main(args):
                 text_enc_model = accelerator.unwrap_model(text_encoder)
             else:
                 text_enc_model = CLIPTextModel.from_pretrained(args.pretrained_model_name_or_path, subfolder="text_encoder", revision=args.revision)
-            scheduler = EulerAncestralDiscreteScheduler(num_train_timesteps=1000, beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear")
+            scheduler = PNDMScheduler(num_train_timesteps=1000, beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear",skip_prk_steps=True,set_alpha_to_one=False,prediction_type="epsilon",steps_offset=1)
             pipeline = StableDiffusionPipeline.from_pretrained(
                 args.pretrained_model_name_or_path,
                 unet=accelerator.unwrap_model(unet),
