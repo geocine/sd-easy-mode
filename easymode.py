@@ -94,12 +94,12 @@ def download_regularization(sdd_class, rev="main"):
     else:
         command = f"unzip -l {zip_file} | wc -l"
         result = subprocess.run(command, shell=True,
-                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL)
         file_count = int(result.stdout.decode('utf-8').strip())
         # Run the unzip command
         pb = ProgressBar(file_count, "Extracting")
         process = subprocess.Popen(
-            ["unzip", "-j", zip_file, "-d", unzip_directory], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            ["unzip", "-j", zip_file, "-d", unzip_directory], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.DEVNULL
         )
         while process.poll() is None:
             out = process.stdout.readline()
