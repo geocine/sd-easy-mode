@@ -10,5 +10,7 @@ That's all there is to it! Give it a try and see the amazing results for yoursel
 
 [![Easy Mode Stable Diffusion](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/geocine/sd-easy-mode/blob/main/EasyMode_Stable_Diffusion.ipynb)
 
+Watch [this video](https://www.youtube.com/watch?v=HVOvL2CyBT0) for by Nolan Aatama for the entire process.
+
 ## Credits
 Scripts forked from https://github.com/ShivamShrirao/diffusers
