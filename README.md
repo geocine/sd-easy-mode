@@ -12,6 +12,10 @@ That's all there is to it! Give it a try and see the amazing results for yoursel
 
 Watch [this video](https://www.youtube.com/watch?v=HVOvL2CyBT0) for by Nolan Aatama for the entire process.
 
+## Basic Usage
+
+https://user-images.githubusercontent.com/507464/216788757-1be53acf-9a6a-44bb-9f6d-83caf44ab3a2.mp4
+
 ## Training Custom Models
 
 > I cannot guarantee quality of output, please use the original repository if you want to train custom models. Here is a video on how to do it with Easy Mode Stable Diffusion if you wish to continue
