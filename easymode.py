@@ -51,6 +51,10 @@ def install_package(package, diffusers_url, xformers_url, branch="main", force_r
         # Install the package using the URL
         result = subprocess.run(
             ["pip", "install", "--no-deps", "-q", xformers_url], capture_output=True, text=True, check=True)
+    elif package == 'triton':
+        # Install the package using the URL
+        result = subprocess.run(
+            ["pip", "install", "-q", "-U", "--pre", package], capture_output=True, text=True, check=True)
     else:
         # Install the package using pip
         result = subprocess.run(
