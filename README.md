@@ -12,5 +12,11 @@ That's all there is to it! Give it a try and see the amazing results for yoursel
 
 Watch [this video](https://www.youtube.com/watch?v=HVOvL2CyBT0) for by Nolan Aatama for the entire process.
 
+## Training Custom Models
+
+> I cannot guarantee quality of output, please use the original repository if you want to train custom models. Here is a video on how to do it with Easy Mode Stable Diffusion if you wish to continue
+
+https://user-images.githubusercontent.com/507464/216762652-607ce74b-b34d-4d1e-9554-2f9b7ad57379.mp4
+
 ## Credits
 Scripts forked from https://github.com/ShivamShrirao/diffusers
