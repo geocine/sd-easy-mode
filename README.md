@@ -1,3 +1,6 @@
+> [!WARNING]
+> I've stopped working on this project and Stable Diffusion 1.5, and the original author of the code has also moved on. But you can try my new Flux training script—it works better than Dreambooth on SD 1.5! Check it out here: https://github.com/geocine/flux.
+
 # Easy Mode Stable Diffusion
 
 easy mode stable diffusion process allows you to generate images based on your own photos in just three steps. No technical skills needed. Simply follow the process and you'll be creating personalized images in no time. Here's how it works:
